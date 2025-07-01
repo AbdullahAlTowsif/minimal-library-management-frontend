@@ -35,7 +35,7 @@ const Navbar = () => {
               <li>
                 <NavigationMenu>
                   <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                    <Link to="/">All Books</Link>
+                    <Link to="/books">All Books</Link>
                   </NavigationMenuLink>
                 </NavigationMenu>
               </li>
@@ -54,7 +54,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">
             <NavigationMenu>
               <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                <Link to="/">All Books</Link>
+                <Link to="/books">All Books</Link>
               </NavigationMenuLink>
             </NavigationMenu>
             <NavigationMenu>
