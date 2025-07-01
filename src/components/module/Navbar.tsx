@@ -34,14 +34,14 @@ const Navbar = () => {
             >
               <li>
                 <NavigationMenu>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                     <Link to="/">All Books</Link>
                   </NavigationMenuLink>
                 </NavigationMenu>
               </li>
               <li>
                 <NavigationMenu>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                     <Link to="/">Book Summary</Link>
                   </NavigationMenuLink>
                 </NavigationMenu>
@@ -53,12 +53,12 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <NavigationMenu>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                 <Link to="/">All Books</Link>
               </NavigationMenuLink>
             </NavigationMenu>
             <NavigationMenu>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                 <Link to="/">Borrow Summary</Link>
               </NavigationMenuLink>
             </NavigationMenu>
