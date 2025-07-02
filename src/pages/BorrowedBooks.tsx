@@ -20,7 +20,7 @@ const BorrowedBooks = () => {
     return <LoadingSpinner></LoadingSpinner>;
   }
   return (
-    <div>
+    <div className="min-h-screen">
       <Navbar></Navbar>
       <div className="w-11/12 mx-auto">
         <h1 className="text-center my-3 text-4xl font-bold">

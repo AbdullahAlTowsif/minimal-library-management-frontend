@@ -53,7 +53,7 @@ const BorrowBook = () => {
     }
   };
   return (
-    <div>
+    <div className="min-h-screen">
       <Navbar></Navbar>
       <div className="w-11/12 mx-auto py-10 px-4">
         <h1 className="text-3xl font-bold text-center text-blue-600 mb-8">

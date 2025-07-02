@@ -55,7 +55,7 @@ const UpdateBook = () => {
     }
 
   return (
-    <div>
+    <div className="min-h-screen">
       <div>
         <Navbar></Navbar>
         <div className="w-11/12 mx-auto py-10 px-4">

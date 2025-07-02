@@ -38,7 +38,7 @@ const CreateBook = () => {
     try {
       const res = await addBook(bookData).unwrap();
     toast.success("Book Data Added Successfully!");
-    navigate("/");
+    navigate("/books");
     console.log("From Response => ", res);
     form.reset();
     } catch (err) {
@@ -47,7 +47,7 @@ const CreateBook = () => {
     }
   };
   return (
-    <div>
+    <div className="min-h-screen">
         <Navbar></Navbar>
       <div className="w-11/12 mx-auto py-10 px-4">
         <h1 className="text-3xl font-bold text-center text-blue-600 mb-8">
