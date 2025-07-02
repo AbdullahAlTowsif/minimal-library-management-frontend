@@ -8,7 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { useGetBooksQuery } from "@/redux/libraryApi";
+import { useDeleteBookMutation, useGetBooksQuery } from "@/redux/libraryApi";
 import type { IBook } from "@/type";
 import { FaRegEdit } from "react-icons/fa";
 import { Trash2 } from "lucide-react";
@@ -16,10 +16,21 @@ import { IoBookSharp } from "react-icons/io5";
 import { Link } from "react-router";
 import { Button } from "@/components/ui/button";
 import BookDetailsModal from "@/components/module/BookDetailsModal";
+import toast from "react-hot-toast";
 
 const AllBooks = () => {
   const { data, isLoading } = useGetBooksQuery([]);
   // console.log(data);
+  const [deleteBook] = useDeleteBookMutation();
+
+  const handleDelete = async (id: string) => {
+    try {
+      await deleteBook(id).unwrap();
+      toast.success("Book Deleted Successfully!!");
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   if (isLoading) {
     return <LoadingSpinner></LoadingSpinner>;
@@ -54,12 +65,28 @@ const AllBooks = () => {
                 <TableCell>
                   {book.available ? "Available" : "Not Available"}
                 </TableCell>
-                <TableCell> <BookDetailsModal bookId={book._id}></BookDetailsModal> </TableCell>
+                <TableCell>
+                  {" "}
+                  <BookDetailsModal bookId={book._id}></BookDetailsModal>{" "}
+                </TableCell>
                 <TableCell className="text-right">
                   <div className="flex justify-between items-center text-sm">
-                    <Link to={`/edit-book/${book._id}`}> <FaRegEdit /> </Link>
-                    <Button variant="link" className="p-0 text-red-500"> <Trash2></Trash2> </Button>
-                    <Link to={'/borrow/:bookId'}> <IoBookSharp /> </Link>
+                    <Link to={`/edit-book/${book._id}`}>
+                      {" "}
+                      <FaRegEdit />{" "}
+                    </Link>
+                    <Button
+                      onClick={() => handleDelete(book._id)}
+                      variant="link"
+                      className="p-0 text-red-500 hover:cursor-pointer"
+                    >
+                      {" "}
+                      <Trash2></Trash2>{" "}
+                    </Button>
+                    <Link to={"/borrow/:bookId"}>
+                      {" "}
+                      <IoBookSharp />{" "}
+                    </Link>
                   </div>
                 </TableCell>
               </TableRow>
