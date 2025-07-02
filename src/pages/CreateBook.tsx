@@ -35,11 +35,15 @@ const CreateBook = () => {
       available: true,
     };
 
-    const res = await addBook(bookData).unwrap();
+    try {
+      const res = await addBook(bookData).unwrap();
     toast.success("Bood Data Added Successfully!");
     navigate("/");
     console.log("From Response => ", res);
     form.reset();
+    } catch (err) {
+      toast.error("Something went wrong. Try Again!!")
+    }
   };
   return (
     <div>
