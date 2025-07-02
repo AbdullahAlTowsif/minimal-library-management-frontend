@@ -43,7 +43,7 @@ const Navbar = () => {
               <li>
                 <NavigationMenu>
                   <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                    <Link to="/">Book Summary</Link>
+                    <Link to="/borrow-summary">Book Summary</Link>
                   </NavigationMenuLink>
                 </NavigationMenu>
               </li>
@@ -60,7 +60,7 @@ const Navbar = () => {
             </NavigationMenu>
             <NavigationMenu>
               <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                <Link to="/">Borrow Summary</Link>
+                <Link to="/borrow-summary">Borrow Summary</Link>
               </NavigationMenuLink>
             </NavigationMenu>
           </ul>

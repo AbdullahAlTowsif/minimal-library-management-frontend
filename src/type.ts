@@ -1,22 +1,35 @@
 export interface IBook {
-    title: string,
-    author: string,
-    genre: "FICTION" | "NON_FICTION" | "SCIENCE" | "HISTORY" | "BIOGRAPHY" | "FANTASY",
-    isbn: string,
-    description: string,
-    copies: number,
-    available: boolean,
-    _id: string
+  title: string;
+  author: string;
+  genre:
+    | "FICTION"
+    | "NON_FICTION"
+    | "SCIENCE"
+    | "HISTORY"
+    | "BIOGRAPHY"
+    | "FANTASY";
+  isbn: string;
+  description: string;
+  copies: number;
+  available: boolean;
+  _id: string;
 }
-
 
 export interface BookQueryParams {
   filter?: IBook["genre"];
   sortBy?: string;
-  sort?: 'asc' | 'desc';
+  sort?: "asc" | "desc";
   limit?: number;
 }
 
 export interface BookDetailsModalProps {
   bookId: string;
+}
+
+export interface BorrowedBooksProps {
+  totalQuantity: number;
+  book: {
+    title: string;
+    isbn: string;
+  };
 }

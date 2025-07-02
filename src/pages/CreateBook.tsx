@@ -42,6 +42,7 @@ const CreateBook = () => {
     console.log("From Response => ", res);
     form.reset();
     } catch (err) {
+      console.log(err);
       toast.error("Something went wrong. Try Again!!")
     }
   };
