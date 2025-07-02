@@ -21,11 +21,13 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { useGetBookQuery, useUpdateBookMutation } from "@/redux/libraryApi";
 import LoadingSpinner from "@/components/module/LoadingSpinner";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
+import toast from "react-hot-toast";
 
 const UpdateBook = () => {
   const { id } = useParams();
   console.log(id);
+  const navigate = useNavigate();
 
   const form = useForm();
     const { data: singleBookData, isLoading } = useGetBookQuery(id);
@@ -42,6 +44,8 @@ const UpdateBook = () => {
     };
 
     const res = await updateBook(bookData).unwrap();
+    toast.success("Book Data Updated Successfully")
+    navigate('/');
     console.log("From Update Response:", res);
     form.reset();
   };

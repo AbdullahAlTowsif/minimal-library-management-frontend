@@ -20,9 +20,12 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { useAddBookMutation } from "@/redux/libraryApi";
 import { useForm, type FieldValues, type SubmitHandler } from "react-hook-form";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router";
 
 const CreateBook = () => {
   const form = useForm();
+  const navigate = useNavigate();
   const [addBook, { data }] = useAddBookMutation();
   console.log(data);
 
@@ -33,6 +36,8 @@ const CreateBook = () => {
     };
 
     const res = await addBook(bookData).unwrap();
+    toast.success("Bood Data Added Successfully!");
+    navigate("/");
     console.log("From Response => ", res);
     form.reset();
   };
