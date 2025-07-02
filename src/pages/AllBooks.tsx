@@ -54,7 +54,7 @@ const AllBooks = () => {
                 </TableCell>
                 <TableCell className="text-right">
                   <div className="flex justify-between items-center text-sm">
-                    <Link to={'/edit-book/:id'}> <FaRegEdit /> </Link>
+                    <Link to={`/edit-book/${book._id}`}> <FaRegEdit /> </Link>
                     <Button variant="link" className="p-0 text-red-500"> <Trash2></Trash2> </Button>
                     <Link to={'/borrow/:bookId'}> <IoBookSharp /> </Link>
                   </div>
