@@ -4,11 +4,12 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router";
+import { ModeToggle } from "../mode-toggle";
 
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar bg-base-100 shadow-sm">
+      <div className="navbar shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -64,7 +65,8 @@ const Navbar = () => {
             </NavigationMenu>
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end space-x-5">
+          <ModeToggle></ModeToggle>
           <Link className="btn" to={'/create-book'}>Add Book</Link>
         </div>
       </div>
