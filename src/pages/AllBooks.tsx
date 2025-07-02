@@ -66,26 +66,22 @@ const AllBooks = () => {
                   {book.available ? "Available" : "Not Available"}
                 </TableCell>
                 <TableCell>
-                  {" "}
-                  <BookDetailsModal bookId={book._id}></BookDetailsModal>{" "}
+                  <BookDetailsModal bookId={book._id}></BookDetailsModal>
                 </TableCell>
                 <TableCell className="text-right">
                   <div className="flex justify-between items-center text-sm">
                     <Link to={`/edit-book/${book._id}`}>
-                      {" "}
-                      <FaRegEdit />{" "}
+                      <FaRegEdit />
                     </Link>
                     <Button
                       onClick={() => handleDelete(book._id)}
                       variant="link"
                       className="p-0 text-red-500 hover:cursor-pointer"
                     >
-                      {" "}
-                      <Trash2></Trash2>{" "}
+                      <Trash2></Trash2>
                     </Button>
-                    <Link to={"/borrow/:bookId"}>
-                      {" "}
-                      <IoBookSharp />{" "}
+                    <Link to={`/borrow/${book._id}`}>
+                      <IoBookSharp />
                     </Link>
                   </div>
                 </TableCell>

@@ -37,7 +37,7 @@ const CreateBook = () => {
 
     try {
       const res = await addBook(bookData).unwrap();
-    toast.success("Bood Data Added Successfully!");
+    toast.success("Book Data Added Successfully!");
     navigate("/");
     console.log("From Response => ", res);
     form.reset();
