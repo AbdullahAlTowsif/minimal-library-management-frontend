@@ -16,3 +16,7 @@ export interface BookQueryParams {
   sort?: 'asc' | 'desc';
   limit?: number;
 }
+
+export interface BookDetailsModalProps {
+  bookId: string;
+}

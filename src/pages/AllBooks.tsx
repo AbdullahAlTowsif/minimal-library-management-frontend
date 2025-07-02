@@ -15,10 +15,11 @@ import { Trash2 } from "lucide-react";
 import { IoBookSharp } from "react-icons/io5";
 import { Link } from "react-router";
 import { Button } from "@/components/ui/button";
+import BookDetailsModal from "@/components/module/BookDetailsModal";
 
 const AllBooks = () => {
-  const { data, isLoading } = useGetBooksQuery(undefined);
-  console.log(data);
+  const { data, isLoading } = useGetBooksQuery([]);
+  // console.log(data);
 
   if (isLoading) {
     return <LoadingSpinner></LoadingSpinner>;
@@ -37,6 +38,7 @@ const AllBooks = () => {
             <TableHead>ISBN</TableHead>
             <TableHead>Copies</TableHead>
             <TableHead>Availability</TableHead>
+            <TableHead>Details</TableHead>
             <TableHead className="text-right">Actions</TableHead>
           </TableRow>
         </TableHeader>
@@ -52,6 +54,7 @@ const AllBooks = () => {
                 <TableCell>
                   {book.available ? "Available" : "Not Available"}
                 </TableCell>
+                <TableCell> <BookDetailsModal bookId={book._id}></BookDetailsModal> </TableCell>
                 <TableCell className="text-right">
                   <div className="flex justify-between items-center text-sm">
                     <Link to={`/edit-book/${book._id}`}> <FaRegEdit /> </Link>
