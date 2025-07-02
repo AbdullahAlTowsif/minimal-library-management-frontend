@@ -61,7 +61,7 @@ const AllBooks = () => {
           </TableHeader>
           <TableBody>
             {!isLoading &&
-              data.data.map((book: IBook) => (
+              data?.data.map((book: IBook) => (
                 <TableRow key={book.isbn}>
                   <TableCell className="font-medium">{book.title}</TableCell>
                   <TableCell>{book.author}</TableCell>
